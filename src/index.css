@@ -2,5 +2,28 @@ body {
   margin: 0;
   padding: 0;
   font-family: Helvetica;
-  font-weight: lighter;
+  color: floralwhite;
+}
+
+a {
+  color: floralwhite;
+}
+
+.App {
+  background-image: url(./img/yarn-bw.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.App-header {
+  height: 25%;
+  padding: 5em 0 6em;
+}
+
+.navigation {
+  margin-top: 3em;
 }

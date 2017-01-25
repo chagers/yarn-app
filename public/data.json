@@ -1,0 +1,45 @@
+{
+  "patterns": [
+    {
+      "id": "k-001",
+      "type": "knit",
+      "title": "Plaited Throw",
+      "creator": "Purl Soho",
+      "sourceURL": "https://www.purlsoho.com/create/2017/01/13/plaited-throw/",
+      "materials": [
+        {
+          "yarn": {
+            "content": "50% Fine Highland Wool, 35% Alpaca, and 15% Linen",
+            "weight": "100 grams",
+            "length": "439 yards",
+            "guage": "6.5 - 7.5 stitches per inch",
+            "suggestedNeedle": "US 2 - 5 (3 - 3.75 mm)",
+            "suggestedCrochetHook": "C - E (2.75 - 3.5 mm)",
+            "recommendedCare": "Hand wash and lay flat to dry",
+            "link": "https://www.purlsoho.com/linen-quill.html",
+            "skeinCount": 6,
+            "notes": null
+          }
+        },
+        {
+          "tools": [
+            "US 11, 32-inch circular knitting needles"
+          ]
+        }
+      ],
+      "guage": {
+        "description": "22 stitches = 4 inches in the stitch pattern"
+      },
+      "size": {
+        "description": "Finished Dimensions: Approximately 38 inches wide x 48 inches long"
+      },
+      "notes": {
+        "main": "For this pattern you’ll use the Linen Quill doubled. To do that, just pull a strand from two balls of yarn!",
+        "additional": "There are lots of variations on woven or plaited stitches. Here’s how we do this one... Row 1 (right side): *Insert the right needle through the back loop of the second stitch on the left needle. Wrap the yarn counterclockwise around the right needle and knit a stitch, but do not remove the second stitch from the left needle. Then, knit the first stitch on the needle as usual, and allow both stitches to fall off the left needle, repeat from * to end row. Row 2 (wrong side): Purl 1 stitch, then… *purl the second stitch on the left needle by inserting the right needle through the front loop and purling a stitch. Do not remove the second stitch from the left needle. Then, purl the first stitch on the needle as usual, and allow both stitches to fall off the left needle, repeat from * to end of row. NOTE: If you want to change the sizing or use this stitch pattern for a different project, cast on a multiple of 2 stitches."
+      },
+      "pattern": {
+        "description": "Loosely cast on 210 stitches, with yarn held doubled (see Notes, above). Row 1 (right side): *Knit second stitch on left needle through the back loop without removing stitch from needle, then knit the first stitch, slipping both stitches from needle, repeat from * to end of row. Row 2 (wrong side): P1, *purl second stitch on left needle without removing stitch from needle, then purl the first stitch, slipping both stitches from needle, repeat from * to last stitch, p1. Repeat Rows 1 and 2 until piece measures 48 inches from cast-on edge, ending with Row 2. Bind off all stitches knitwise. Weave in ends and block if desired!"
+      }
+    }
+  ]
+}
