@@ -1,0 +1,11 @@
+.app {
+  background-attachment: fixed;
+  background-image: url(./img/yarn-bw.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}

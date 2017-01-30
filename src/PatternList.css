@@ -1,0 +1,14 @@
+.pattern-card {
+  margin: 0 auto;
+  width: 50%;
+}
+
+button.hide-button {
+  border-bottom: none;
+  font-style: italic;
+  font-size: 0.7em;
+  height: 1em;
+  margin: 0 -20em 0 0;
+  padding: 0;
+  width: 4em;
+}

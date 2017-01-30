@@ -40,6 +40,47 @@
       "pattern": {
         "description": "Loosely cast on 210 stitches, with yarn held doubled (see Notes, above). Row 1 (right side): *Knit second stitch on left needle through the back loop without removing stitch from needle, then knit the first stitch, slipping both stitches from needle, repeat from * to end of row. Row 2 (wrong side): P1, *purl second stitch on left needle without removing stitch from needle, then purl the first stitch, slipping both stitches from needle, repeat from * to last stitch, p1. Repeat Rows 1 and 2 until piece measures 48 inches from cast-on edge, ending with Row 2. Bind off all stitches knitwise. Weave in ends and block if desired!"
       }
+    },
+    {
+      "id": "c-001",
+      "type": "crochet",
+      "title": "Crochet Four Points Baby Blanket",
+      "creator": "Purl Soho",
+      "sourceURL": "https://www.purlsoho.com/create/2016/03/31/crochet-four-points-baby-blanket/",
+      "materials": [
+        {
+          "yarn": {
+            "content": "50% Fine Highland Wool, 35% Alpaca, and 15% Linen",
+            "weight": "100 grams",
+            "length": "439 yards",
+            "guage": "6.5 - 7.5 stitches per inch",
+            "suggestedNeedle": "US 2 - 5 (3 - 3.75 mm)",
+            "suggestedCrochetHook": "C - E (2.75 - 3.5 mm)",
+            "recommendedCare": "Hand wash and lay flat to dry",
+            "link": "https://www.purlsoho.com/linen-quill.html",
+            "skeinCount": 4,
+            "notes": null
+          }
+        },
+        {
+          "tools": [
+            "A size D (3.25mm) crochet hook"
+          ]
+        }
+      ],
+      "guage": {
+        "description": "21 stitches = 4 inches in single crochet"
+      },
+      "size": {
+        "description": "Finished Dimensions: Approximately 36 x 36 inches"
+      },
+      "notes": {
+        "main": null,
+        "additional": null
+      },
+      "pattern": {
+        "description": "TRIANGLE 1: (IF YOU ARE A BEGINNER CROCHETER...  With Color A, chain 143. Foundation Row 1: Starting with second chain from hook, make 1 single crochet into each chain stitch, chain 1, and turn work. [142 stitches] IF YOU ARE A MORE EXPERIENCED CROCHETER...  With Color A, make a Foundation Single Crochet of 142 stitches. EVERYONE...  Row 1 (wrong side): Make 1 single crochet (sc) into each stitch to last 2 stitches, 1 sc dec (see Notes, above), chain 1, and turn. [1 stitch decreased] Row 2 (right side): 1 sc dec, make 1 sc into each stitch to end of row, chain 1, and turn. [1 stitch decreased] (Note: To help you keep track, you may want to mark the right side of the fabric with a removable stitch marker or piece of scrap yarn.) Repeat Rows 1 and 2 until one stitch remains. Cut yarn and pull through remaining loop. TRIANGLE 2: With the wrong side facing you and starting at the right end of the foundation edge, join Color B and make 1 sc in each stitch along the foundation edge, chain 1, and turn. [142 stitches] As with Triangle 1, work Rows 1 and 2 until you have one stitch left. Cut yarn and pull through remaining loop. Set aside Triangles 1 and 2 for now. TRIANGLES 3 + 4: Repeat the instructions for Triangles 1 and 2 to create Triangles 3 and 4. Make Triangle 3 with Color C and Triangle 4 with Color D. JOIN TRIANGLES 1 + 2 WITH TRIANGLES 3 + 4 Note: Now is a good time to lightly steam or wet block both pieces. Shape each into a neat right angle triangle. With the right sides facing up, align the two finished pieces along the edges that are half one color and half another color, so that Triangle 1 abuts Triangle 3 and Triangle 2 abuts Triangle 4. Thread a tapestry needle with Color A and using a whipstitch, join the edge of Triangle 1 to the edge of Triangle 3. Using Color B, join the edge of Triangle 2 to the edge of Triangle 4 in the same way. FINISH: Weave in ends and block again, if desired."
+      }
     }
   ]
 }

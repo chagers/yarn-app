@@ -1,0 +1,26 @@
+.landing {
+  padding-bottom: 5em;
+}
+
+.app-header {
+  height: 25%;
+  padding: 5em 0 6em;
+}
+
+.navigation {
+  margin-top: 3em;
+}
+
+button {
+  background-color: transparent;
+  border-bottom: 1px solid floralwhite;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-radius: 0;
+  color: floralwhite;
+  font-size: 1.7em;
+  margin: 3em 5em;
+  padding: 1em 2em;
+  width: 10em;
+}
