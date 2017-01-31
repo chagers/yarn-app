@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+// import { Link } from 'react-router'
 import './PatternList.css'
 
 class PatternList extends Component {
   render() {
     return (
-      <div className="pattern-card">
+      <div className='pattern-card'>
         <section>
           <h4>{this.props.title}</h4>
           <h5>By: <a href={`${this.props.sourceURL}`} target="_blank">{this.props.creator}</a></h5>

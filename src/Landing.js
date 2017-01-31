@@ -52,15 +52,15 @@ class Landing extends Component {
       list = null
     }
     return (
-      <div className="landing">
-        <header className="app-header">
+      <div className='landing'>
+        <header className='app-header'>
           <h1>Welcome to Yarn</h1>
           <h2>Oh, just some patterns for knitting and crocheting.</h2>
           <p>
             (If you're looking for dependency management... Try <a href="https://yarnpkg.com/" target="_blank">here</a>.)
           </p>
         </header>
-        <section className="navigation">
+        <section className='navigation'>
           <h3>What kind of patterns are you looking for?</h3>
           <button onClick={this.knitListClick}>Knit</button>
           <button onClick={this.crochetListClick}>Crochet</button>
