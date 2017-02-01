@@ -8,3 +8,7 @@ body {
 a {
   color: floralwhite;
 }
+
+li {
+  list-style-type: none;
+}

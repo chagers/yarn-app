@@ -64,9 +64,11 @@ class Landing extends Component {
           <h3>What kind of patterns are you looking for?</h3>
           <button onClick={this.knitListClick}>Knit</button>
           <button onClick={this.crochetListClick}>Crochet</button>
-          <div className='list-container'>
-            {list}
-          </div>
+          {list && 
+            <div className='list-container'>
+              {list}
+            </div>
+          }
         </section>
       </div>
     )

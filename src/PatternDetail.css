@@ -22,3 +22,7 @@
   width: 45%;
   margin: 2em auto;
 }
+
+.materials-list li {
+  list-style-type: square;
+}

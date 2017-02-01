@@ -30,7 +30,7 @@ class PatternDetail extends Component {
     return (
       <div className='pattern-detail'>
         <header className='detail-header'>
-          <Link to='/'>...back to main page</Link>
+          <Link to='/'>...back to pattern list</Link>
           <h1>{title}</h1>
           <p>By: {creator}</p>
         </header>
@@ -40,7 +40,7 @@ class PatternDetail extends Component {
               <li>
                 <h3>Recommended Yarn:</h3>
               </li>
-                <ul>
+                <ul className='materials-list'>
                   <li>Name: {yarn.name}</li>
                   <li>Content: {yarn.content}</li>
                   <li>Weight: {yarn.weight}</li>
@@ -56,7 +56,7 @@ class PatternDetail extends Component {
               <li>
                 <h3>Tools:</h3>
               </li>
-                <ul>
+                <ul className='materials-list'>
                   {tools}
                 </ul>
             </ul>
