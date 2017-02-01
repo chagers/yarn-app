@@ -1,14 +1,7 @@
 .pattern-card {
-  margin: 0 auto;
-  width: 50%;
+  margin-bottom: 3em;
 }
 
-button.hide-button {
-  border-bottom: none;
-  font-style: italic;
+.pattern-card > a {
   font-size: 0.7em;
-  height: 1em;
-  margin: 0 -20em 0 0;
-  padding: 0;
-  width: 4em;
 }

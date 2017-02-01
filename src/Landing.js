@@ -39,7 +39,7 @@ class Landing extends Component {
           <PatternList key={pattern.id} {...pattern} />
         )
       })
-    } else if(crochetList) {
+    } else if (crochetList) {
       list = data.patterns.filter((pattern) => {
         return (pattern.type).indexOf('crochet') >= 0
         })
@@ -60,11 +60,13 @@ class Landing extends Component {
             (If you're looking for dependency management... Try <a href="https://yarnpkg.com/" target="_blank">here</a>.)
           </p>
         </header>
-        <section className='navigation'>
+        <section className='pattern-list'>
           <h3>What kind of patterns are you looking for?</h3>
           <button onClick={this.knitListClick}>Knit</button>
           <button onClick={this.crochetListClick}>Crochet</button>
-          {list}
+          <div className='list-container'>
+            {list}
+          </div>
         </section>
       </div>
     )

@@ -11,7 +11,7 @@ const Routes = (props) => (
       path='pattern-detail/:id'
       component={(props) => {
         const patterns = data.patterns.filter((pattern) => props.params.id === pattern.id)
-        return <PatternDetail pattern={patterns[0]} {...props} />
+        return <PatternDetail pattern={patterns[0]} {...props} key={patterns[0].id} />
       }}
     />
   </Router>

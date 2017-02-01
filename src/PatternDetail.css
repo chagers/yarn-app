@@ -1,4 +1,24 @@
 .pattern-detail {
-  background-color: lightslategray;
+  background-attachment: fixed;
+  background-image: url(./img/detail_bkgd.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
   min-height: 100vh;
+  padding: 2em 0 5em 0;
+  position: relative;
+  width: 100%;
+}
+
+.detail-header {
+  text-align: center;
+}
+
+.detail-header a {
+  text-align: left;
+}
+
+.instructions {
+  width: 45%;
+  margin: 2em auto;
 }
