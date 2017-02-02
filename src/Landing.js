@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
+import contentful from 'contentful'
 import PatternList from './PatternList'
-import data from '../public/data.json'
 import './Landing.css'
 
+const client = contentful.createClient({
+  space: 'bmxo0hx3k9kh',
+  accessToken: 'b483b718a34b980fe631e3f15ab7d1ee5004393c385709e306b75177f8d32a30'
+})
 
 class Landing extends Component {
   constructor(props) {
@@ -13,6 +17,21 @@ class Landing extends Component {
       knitList: false,
       crochetList: false
     }
+  }
+  getInitialState () {
+    return {
+      patterns: []
+    }
+  }
+  componentDidMount () {
+    client.getEntries()
+      .then((response) => {
+        this.setState({patterns: response.items})
+        console.log('response is in', response.items)
+      })
+      .catch((error) => {
+        console.log("Didn't get Contentful entries", error)
+      })
   }
   knitListClick () {
     this.setState({
@@ -27,25 +46,30 @@ class Landing extends Component {
     })
   }
   render() {
-    const knitList = this.state.knitList
-    const crochetList = this.state.crochetList
+    let { patterns } = this.state
+    let knitList = this.state.knitList
+    let crochetList = this.state.crochetList
     let list = null
-    if (knitList) {
-      list = data.patterns.filter((pattern) => {
-        return (pattern.type).indexOf('knit') >= 0
+
+    if (patterns && knitList) {
+      list = patterns.filter((pattern) => {
+        console.log(pattern)
+        console.log(typeof pattern.fields.type)
+        // TODO: ensure only looking for pattern detail, not yarn objects. yarn objects make toLowerCase fail
+        return (pattern.fields.type.toLowerCase() === 'knit')
         })
         .map((pattern) => {
           return (
-          <PatternList key={pattern.id} {...pattern} />
+          <PatternList key={pattern.sys.id} {...pattern.fields} />
         )
       })
-    } else if (crochetList) {
-      list = data.patterns.filter((pattern) => {
-        return (pattern.type).indexOf('crochet') >= 0
+    } else if (patterns && crochetList) {
+      list = patterns.filter((pattern) => {
+        return (pattern.fields.type.toLowerCase() === 'crochet')
         })
         .map((pattern) => {
           return (
-          <PatternList key={pattern.id} {...pattern} />
+          <PatternList key={pattern.sys.id} {...pattern.fields} />
         )
       })
     } else {

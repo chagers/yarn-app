@@ -14,14 +14,12 @@ class PatternList extends Component {
   }
 }
 
-const { string, shape } = React.PropTypes
+const { string } = React.PropTypes
 PatternList.propTypes = {
-  pattern: shape({
-    id: string,
-    title: string,
-    sourceURL: string,
-    creator: string
-  })
+  title: string,
+  id: string,
+  sourceURL: string,
+  creator: string
 }
 
 export default PatternList
