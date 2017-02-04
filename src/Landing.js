@@ -27,7 +27,6 @@ class Landing extends Component {
     client.getEntries()
       .then((response) => {
         this.setState({patterns: response.items})
-        console.log('response is in', response.items)
       })
       .catch((error) => {
         console.log("Didn't get Contentful entries", error)
@@ -53,14 +52,11 @@ class Landing extends Component {
 
     if (patterns && knitList) {
       list = patterns.filter((pattern) => {
-        console.log(pattern)
-        console.log(typeof pattern.fields.type)
-        // TODO: ensure only looking for pattern detail, not yarn objects. yarn objects make toLowerCase fail
         return (pattern.fields.type.toLowerCase() === 'knit')
         })
         .map((pattern) => {
           return (
-          <PatternList key={pattern.sys.id} {...pattern.fields} />
+          <PatternList key={pattern.sys.id} {...pattern} />
         )
       })
     } else if (patterns && crochetList) {
@@ -69,7 +65,7 @@ class Landing extends Component {
         })
         .map((pattern) => {
           return (
-          <PatternList key={pattern.sys.id} {...pattern.fields} />
+          <PatternList key={pattern.sys.id} {...pattern} />
         )
       })
     } else {
@@ -78,11 +74,8 @@ class Landing extends Component {
     return (
       <div className='landing'>
         <header className='app-header'>
-          <h1>Welcome to Yarn</h1>
+          <h1>Welcome to Yarning</h1>
           <h2>Oh, just some patterns for knitting and crocheting.</h2>
-          <p>
-            (If you're looking for dependency management... Try <a href="https://yarnpkg.com/" target="_blank">here</a>.)
-          </p>
         </header>
         <section className='pattern-list'>
           <h3>What kind of patterns are you looking for?</h3>
