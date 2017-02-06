@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
-import contentful from 'contentful'
+import client from './config.js'
 import PatternList from './PatternList'
 import './App.css'
 
-const client = contentful.createClient({
-  space: 'bmxo0hx3k9kh',
-  accessToken: 'b483b718a34b980fe631e3f15ab7d1ee5004393c385709e306b75177f8d32a30'
-})
 
 class App extends Component {
   constructor(props) {
