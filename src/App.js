@@ -19,9 +19,10 @@ class App extends Component {
       patterns: []
     }
   }
-  componentDidMount () {
+  componentWillMount () {
     client.getEntries()
       .then((response) => {
+        console.log(response.items)
         this.setState({patterns: response.items})
       })
       .catch((error) => {

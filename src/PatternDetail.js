@@ -9,49 +9,51 @@ class PatternDetail extends Component {
     console.log(props)
     this.state = {
       key: props.params.id,
-      pattern: {}
+      pattern: {},
+      yarn: {}
     }
   }
-  componentDidMount () {
+  componentWillMount () {
     client.getEntry(this.state.key)
       .then((response) => {
-        console.log(response)
         this.setState({pattern: response.fields})
+        this.getYarn()
       })
       .catch((error) => {
-        console.log("Didn't get Contentful entries", error)
+        console.log("Didn't get pattern", error)
       })
   }
+  getYarn () {
+    if (this.state.pattern) {
+      client.getEntry(this.state.pattern.yarn[0].sys.id)
+        .then((response) => {
+          this.setState({yarn: response.fields})
+        })
+        .catch((error) => {
+          console.log("Didn't get yarn", error)
+        })
+    }
+  }
   render() {
-    const { title, creator, materials, gauge, size, pattern } = this.state.pattern
-    if (title) {
-      console.log(pattern)
-    } else {
-      console.log('blah')
-      return null
-    }
-    let yarn = materials[0].yarn
-    let tools = materials[1].tools
-    let notes = this.props.pattern
-    if (tools) {
-      tools = tools.map((tool) => {
-        return <li key={tool.toString()}>{tool}</li>
-      })
-    } else {
-      return null
-    }
-    if (notes.description) {
-      notes = (
-        <div>
-          <h2>Notes:</h2>
-            <ul>
-              <li>{notes.description}</li>
-            </ul>
-        </div>
-      )
-    } else {
-      notes = null
-    }
+    const { 
+      title,
+      creator,
+      skeinCount,
+      tools,
+      size,
+      notes,
+      pattern 
+    } = this.state.pattern
+    const { 
+      name,
+      content,
+      weight,
+      length,
+      suggestedNeedle,
+      suggestedCrochetHook,
+      recommendedCare,
+      sourceLink 
+    } = this.state.yarn
     return (
       <div className='pattern-detail'>
         <header className='detail-header'>
@@ -59,58 +61,76 @@ class PatternDetail extends Component {
           <h1>{title}</h1>
           <p>By: {creator}</p>
         </header>
-        <div className='instructions'>
+        <main className='instructions'>
           <h2>Materials:</h2>
             <ul>
               <li>
                 <h3>Recommended Yarn:</h3>
+                  <ul className='materials-list'>
+                    <li>Name: {name}</li>
+                    <li>Content: {content}</li>
+                    <li>Weight: {weight}</li>
+                    <li>Length: {length}</li>
+                    <li>Gauge: {this.state.yarn.gauge}</li>
+                    <li>Suggested Needle: {suggestedNeedle}</li>
+                    <li>Suggested Crochet Hook: {suggestedCrochetHook}</li>
+                    <li>Recommended Care: {recommendedCare}</li>
+                    <li><a href={sourceLink} target='_blank'>Purchase Here</a></li>
+                    <li>Skein Count: {skeinCount}</li>
+                  </ul>
               </li>
-                <ul className='materials-list'>
-                  <li>Name: {yarn.name}</li>
-                  <li>Content: {yarn.content}</li>
-                  <li>Weight: {yarn.weight}</li>
-                  <li>Length: {yarn.length}</li>
-                  <li>Gauge: {yarn.gauge}</li>
-                  <li>Suggested Needle: {yarn.suggestedNeedle}</li>
-                  <li>Suggested Crochet Hook: {yarn.suggestedCrochetHook}</li>
-                  <li>Recommended Care: {yarn.recommendedCare}</li>
-                  <li><a href={yarn.link} target='_blank'>Purchase Here</a></li>
-                  <li>Skein Count: {yarn.skeinCount}</li>
-                  {yarn.notes ? 'Notes: ' + yarn.notes : null}
-                </ul>
               <li>
                 <h3>Tools:</h3>
+                  <ul className='materials-list'>
+                    <li>{tools}</li>
+                  </ul>
               </li>
-                <ul className='materials-list'>
-                  {tools}
-                </ul>
             </ul>
           <h2>Gauge:</h2>
             <ul>
-              <li>{gauge.description}</li>
+              <li>{this.state.pattern.gauge}</li>
             </ul>
           <h2>Size:</h2>
             <ul>
-              <li>{size.description}</li>
+              <li>{size}</li>
             </ul>
-          {notes}
+          <h2>Notes:</h2>
+            <ul>
+              <li>{notes}</li>
+            </ul>
           <h2>Pattern:</h2>
             <ul>
-              <li>{pattern.description}</li>
+              <li>{pattern}</li>
             </ul>
-        </div>
+        </main>
       </div>
     )
   }
 }
 
-const { string, shape, arrayOf, object } = React.PropTypes
+const { string, shape, numb, array } = React.PropTypes
 PatternDetail.propTypes = {
   pattern: shape({
     id: string,
     title: string,
     creator: string,
-    materials: arrayOf(object)
+    tools: array,
+    gauge: string,
+    size: string,
+    notes: string,
+    pattern: string,
+    skeinCount: numb,
+    yarn: shape({
+      name: string,
+      content: string,
+      weight: string,
+      length: string,
+      gauge: string,
+      suggestedNeedle: string,
+      suggestedCrochetHook: string,
+      recommendedCare: string,
+      sourceLink: string
+    })
   })
 }
 
