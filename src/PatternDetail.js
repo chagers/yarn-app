@@ -1,10 +1,35 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
+import client from './config'
 import './PatternDetail.css'
 
 class PatternDetail extends Component {
+  constructor (props) {
+    super(props)
+    console.log(props)
+    this.state = {
+      key: props.params.id,
+      pattern: {}
+    }
+  }
+  componentDidMount () {
+    client.getEntry(this.state.key)
+      .then((response) => {
+        console.log(response)
+        this.setState({pattern: response.fields})
+      })
+      .catch((error) => {
+        console.log("Didn't get Contentful entries", error)
+      })
+  }
   render() {
-    const { title, creator, materials, gauge, size, pattern } = this.props.pattern
+    const { title, creator, materials, gauge, size, pattern } = this.state.pattern
+    if (title) {
+      console.log(pattern)
+    } else {
+      console.log('blah')
+      return null
+    }
     let yarn = materials[0].yarn
     let tools = materials[1].tools
     let notes = this.props.pattern
