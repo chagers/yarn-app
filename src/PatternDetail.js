@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 import client from './config'
+import marked from 'marked'
 import './PatternDetail.css'
 
 class PatternDetail extends Component {
@@ -16,6 +17,7 @@ class PatternDetail extends Component {
   componentWillMount () {
     client.getEntry(this.state.key)
       .then((response) => {
+        console.log(response.fields)
         this.setState({pattern: response.fields})
         this.getYarn()
       })
@@ -32,6 +34,18 @@ class PatternDetail extends Component {
         .catch((error) => {
           console.log("Didn't get yarn", error)
         })
+    }
+  }
+  // getImages () {
+  //   if (this.state.pattern) {
+  //     client.getEntry(this.state.pattern.pictures)
+  //   }
+  // }
+  renderMarkdown (text) {
+    if (text) {
+      return marked(text)
+    } else {
+      return null
     }
   }
   render() {
@@ -95,20 +109,16 @@ class PatternDetail extends Component {
               <li>{size}</li>
             </ul>
           <h2>Notes:</h2>
-            <ul>
-              <li>{notes}</li>
-            </ul>
+            <p className='md-style' dangerouslySetInnerHTML={ { __html: this.renderMarkdown(notes) } }></p>
           <h2>Pattern:</h2>
-            <ul>
-              <li>{pattern}</li>
-            </ul>
+            <p className='md-style pattern-instruct' dangerouslySetInnerHTML={ { __html: this.renderMarkdown(pattern) } }></p>
         </main>
       </div>
     )
   }
 }
 
-const { string, shape, numb, array } = React.PropTypes
+const { string, shape, number, array } = React.PropTypes
 PatternDetail.propTypes = {
   pattern: shape({
     id: string,
@@ -119,7 +129,7 @@ PatternDetail.propTypes = {
     size: string,
     notes: string,
     pattern: string,
-    skeinCount: numb,
+    skeinCount: number,
     yarn: shape({
       name: string,
       content: string,
