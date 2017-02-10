@@ -1,5 +1,7 @@
 .pattern-card {
-  margin-bottom: 3em;
+  margin: 1em;
+  width: 20em;
+  height: 25em;
 }
 
 .pattern-card > a {

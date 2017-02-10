@@ -8,14 +8,14 @@ class PatternList extends Component {
     const { url, fileName } = this.props.fields.coverImage.fields.file
     const { id } = this.props.sys
     return (
-      <section className='pattern-card'>
+      <article className='pattern-card'>
         <h3>{'<>' + title + '<>'}</h3>
         <p>
           <img src={url} alt={fileName}></img>
         </p>
         <Link to={'/pattern-detail/' + id}>go to pattern</Link>
         <h5>By: <a href={`${source}`} target="_blank">{creator}</a></h5>
-      </section>
+      </article>
     )
   }
 }

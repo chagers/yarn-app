@@ -22,7 +22,6 @@ class App extends Component {
   componentWillMount () {
     client.getEntries()
       .then((response) => {
-        console.log(response.items)
         this.setState({patterns: response.items})
       })
       .catch((error) => {

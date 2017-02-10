@@ -7,7 +7,6 @@ import './PatternDetail.css'
 class PatternDetail extends Component {
   constructor (props) {
     super(props)
-    console.log(props)
     this.state = {
       key: props.params.id,
       pattern: {},
@@ -17,7 +16,6 @@ class PatternDetail extends Component {
   componentWillMount () {
     client.getEntry(this.state.key)
       .then((response) => {
-        console.log(response.fields)
         this.setState({pattern: response.fields})
         this.getYarn()
       })
